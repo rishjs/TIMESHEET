@@ -1,4 +1,4 @@
-# timesheet
+# Timesheet
 Backend training project for creating timesheet for user
 
 ## Project Details - 
