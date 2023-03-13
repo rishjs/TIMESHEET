@@ -12,9 +12,9 @@ const jwt=require("jsonwebtoken");
 const SECRET_KEY="Timesheet";
 //userRegister function
 const userRegister=async(req,res)=>{
-    const {user_name,email_id}=req.body;
     try{
-        //Check any of the field is empty
+      const {user_name,email_id}=req.body;
+        //Check any field is empty
         if(!(user_name && email_id)){
           return res.json({response_message:"User_name or email_id is empty",
           response_status:"400"});
@@ -49,8 +49,7 @@ const userRegister=async(req,res)=>{
               response_message: "User Created Successfully",
               response_status: "200",
               response_object: obj
-            })
-          
+            })    
     }catch(error){
       console.log(error)
       return res.json({
@@ -61,8 +60,8 @@ const userRegister=async(req,res)=>{
 }
 //userLogin function
 const userLogin=async(req,res)=>{
-  const {email_id}=req.body;
   try{
+    const {email_id}=req.body;
      //Check email field is empty
      if(!email_id){
       return res.json({response_message:"email_id is empty",
@@ -76,13 +75,14 @@ const userLogin=async(req,res)=>{
     );
     if(!exixtingUser){
       return res.json({response_message:"User Not Found",
-                      response_status:"401"});
+                      response_status:"401"
+                    });
     }
     //remove existing user
     const removeExistingUser=data.filter(function(checkUser){
       return checkUser.email_id !== exixtingUser.email_id
     })
-    //Generating tokens
+    //Generating otp
     const otp=otpGenerator.generate(6, { digits:true,upperCaseAlphabets: false, specialChars: false,lowerCaseAlphabets:false });
     const expireIn=new Date().getTime()+300*1000;
     exixtingUser['otp']=otp;//add otp field to existingUser
@@ -109,9 +109,9 @@ const userLogin=async(req,res)=>{
 }
 //verifyOtp function
 const verifyOtp=async(req,res)=>{
-  const {email_id,otp}=req.body;
   try{
-     //Check any of the field is empty
+    const {email_id,otp}=req.body;
+     //Check any field is empty
    if(!email_id || !otp){
     return res.json({response_message:"email_id or otp field is empty",
     response_status:"400"});
@@ -175,21 +175,20 @@ const userLogout=async(req,res)=>{
       return data.user_id == req.user_id;
     }
   );
-  if(!exixtingUser){
-    return res.json({response_message:"Unauthorized User",
-                    response_status:"401"});
-  }
-   //remove existing user
-   const removeExistingUser= data.filter(function(checkUser){
-    return checkUser.user_id !== exixtingUser.user_id;
-     })
-     delete exixtingUser.token;//delete token field
-     removeExistingUser.push(exixtingUser);//adding the user without token field
-     await fs.promises.writeFile('./json/userJson.json', JSON.stringify(removeExistingUser, null, 2))
-       res.json({
-         response_message: "Logged out",
-         response_status: "200"
+  if(exixtingUser){
+    //remove existing user
+    const removeExistingUser= data.filter(function(checkUser){
+      return checkUser.user_id !== exixtingUser.user_id;
        })
+       delete exixtingUser.token;//delete token field
+       removeExistingUser.push(exixtingUser);//adding the user without token field
+       await fs.promises.writeFile('./json/userJson.json', JSON.stringify(removeExistingUser, null, 2))
+         res.json({
+           response_message: "Logged out",
+           response_status: "200"
+         })
+  }
+  
   }catch(error){
     console.log(error);
     return res.json({response_message:"Something went wrong",
