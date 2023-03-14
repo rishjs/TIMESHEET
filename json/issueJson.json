@@ -73,14 +73,154 @@
     ]
   },
   {
-    "user_id": "36e1961d-2e01-4f35-b919-91948b5db80b",
+    "user_id": "0e3ffe93-fb0d-45c4-85e5-a75e79f0c999",
     "issues": [
       {
-        "issue_id": "5f67e9e1-246c-48ec-9f89-8a936725ac5e",
+        "issue_id": "fdbcfb61-8ca0-46cf-b97f-49496ec7d8ea",
+        "issue_name": "DAY1",
+        "startDate": "2001-10-10",
+        "endDate": "20-09-2005",
+        "totalHours": "4:00"
+      }
+    ]
+  },
+  {
+    "user_id": "c5dfc54a-119f-4b23-9139-e07bb086b6dc",
+    "issues": [
+      {
+        "issue_id": "19fb7e87-5921-4f23-90fc-7391d1dda153",
         "issue_name": "day1",
-        "startDate": "19/09/1994",
+        "startDate": "12/09/3001",
+        "endDate": "13/10/2002",
+        "totalHours": "4:45",
+        "spentTime": 13,
+        "perOfTaskCompleted": "50"
+      }
+    ]
+  },
+  {
+    "user_id": "68d67874-9a11-4034-a56b-ec025d86a7a9",
+    "issues": [
+      {
+        "issue_id": "8e7667e9-a5f5-446c-9c3b-360ee8d287f5",
+        "issue_name": "day1",
+        "startDate": "19/9/1994",
         "endDate": "20/11/2000",
-        "totalHours": "11:11"
+        "totalHours": "1:11"
+      },
+      {
+        "issue_id": "e42977f9-eb15-40dc-95cd-2d4386267c57",
+        "issue_name": "day2",
+        "startDate": "12/08/2001",
+        "endDate": "04/11/2005",
+        "totalHours": "1:00",
+        "spentTime": 6,
+        "perOfTaskCompleted": "10"
+      },
+      {
+        "issue_id": "29c269b5-b3dc-43c1-8cff-a3c96adc33d1",
+        "issue_name": "day3",
+        "startDate": "12/06/2013",
+        "endDate": "10/06/2004",
+        "totalHours": "8:00"
+      },
+      {
+        "issue_id": "449f616f-863b-4ede-95ac-148e04bf80e8",
+        "issue_name": "day4",
+        "startDate": "12/06/2013",
+        "endDate": "14/03/2023",
+        "totalHours": "8:00"
+      },
+      {
+        "issue_id": "4c14c249-ab05-4b15-b704-5deae86e8514",
+        "issue_name": "day5",
+        "startDate": "12/06/2013",
+        "endDate": "14/03/2023",
+        "totalHours": "8:00"
+      },
+      {
+        "issue_id": "9f3ed1ad-835d-40fc-98fe-3f4d216d801e",
+        "issue_name": "day6",
+        "startDate": "12/06/2013",
+        "endDate": "14/03/2023",
+        "totalHours": "8:00",
+        "spentTime": null,
+        "perOfTaskCompleted": "50"
+      },
+      {
+        "issue_id": "dab50609-0361-4e6d-849d-a8a0d2fb7755",
+        "issue_name": "day7",
+        "startDate": "12/06/2013",
+        "endDate": "10/05/2001",
+        "totalHours": "8:00",
+        "spentTime": 13,
+        "perOfTaskCompleted": "20"
+      },
+      {
+        "issue_id": "07624e3d-a712-4714-895e-a2f97d893b89",
+        "issue_name": "day8",
+        "startDate": "12/07/2013",
+        "endDate": "14/03/2023",
+        "totalHours": "8:00",
+        "spentTime": null,
+        "perOfTaskCompleted": "50"
+      },
+      {
+        "issue_id": "312a46e2-d4bd-4bf4-809c-91b7e079e6d1",
+        "issue_name": "day9",
+        "startDate": "12/07/2013",
+        "endDate": "07/06/2004",
+        "totalHours": "8:00",
+        "spentTime": null,
+        "perOfTaskCompleted": "50"
+      },
+      {
+        "issue_id": "400513fa-6ef1-4916-99c4-7c71d159d2c5",
+        "issue_name": "day11",
+        "startDate": "12/09/3001",
+        "endDate": "13/10/2002",
+        "totalHours": "4:45",
+        "spentTime": 14,
+        "perOfTaskCompleted": "50"
+      },
+      {
+        "issue_id": "80070676-c95b-4159-b4ec-6452643c132e",
+        "issue_name": "day12",
+        "startDate": "12/09/3001",
+        "endDate": "13/10/2002",
+        "totalHours": "4:45",
+        "spentTime": "0"
+      },
+      {
+        "issue_id": "e9931c94-ce69-42f8-906c-d8c9f4a35279",
+        "issue_name": "day13",
+        "startDate": "12/09/3001",
+        "endDate": "13/10/2002",
+        "totalHours": "4:45",
+        "spentTime": "0"
+      },
+      {
+        "issue_id": "10e141a5-216b-4cdc-9612-981b62d254f6",
+        "issue_name": "day14",
+        "startDate": "12/09/3001",
+        "endDate": "13/10/2002",
+        "totalHours": "4:45",
+        "spentTime": 15,
+        "perOfTaskCompleted": "50"
+      }
+    ]
+  },
+  {
+    "user_id": "c2fba83a-03f1-4367-8f84-63f750147dc6",
+    "issues": [
+      {
+        "issue_id": "e2f2ae9f-ddd2-4744-ae5c-fd6a4ed085b2",
+        "issue_name": "day14",
+        "startDate": "12/09/3001",
+        "endDate": "13/10/2002",
+        "totalHours": "4:45",
+        "spentTime": 22,
+        "perOfTaskCompleted": 90
       }
     ]
   }
