@@ -160,9 +160,11 @@ const chargeTime=async(req,res)=>{
 const viewIssues=async(req,res)=>{
   try{
     const {pageNo,issue_id}=req.body;
+    //check pageNo field is valid or not
     if(pageNo && isNaN(pageNo)){
       return response(res,"pageNo field invalid",400);
     }
+    //exixting user check
     const exixtingUser= data.find(
       (data) => {
         return data.user_id == req.user_id;
@@ -170,9 +172,9 @@ const viewIssues=async(req,res)=>{
     );
     if(exixtingUser)
     {
-            if(issue_id)
+            if(issue_id)//if issue_id is present
             {
-                const exixtingIssue=  exixtingUser.issues.find(
+                const exixtingIssue=  exixtingUser.issues.find(//search issue_id
                     (data) => {
                       return data.issue_id == issue_id;
                     }
@@ -186,11 +188,11 @@ const viewIssues=async(req,res)=>{
                     response(res,"Issue doesnot exist",400);
                   }
             }
-            else{
+            else{//if issue_id is not given
               let array=[];
-              if(pageNo)
+              if(pageNo)//if pageNo is prenent
               {
-                for(let i=((pageNo-1)*10);i<(pageNo*10);i++)
+                for(let i=((pageNo-1)*10);i<(pageNo*10);i++)//paginate the issues
                 {
                   if(exixtingUser.issues[i]==undefined)
                   {
@@ -201,7 +203,7 @@ const viewIssues=async(req,res)=>{
                 }
                 response(res,"Viewing Issues",200,array);
               }
-              else{
+              else{//default view 10 issues
                 for(let i=0;i<10;i++)
                 {
                     if(exixtingUser.issues[i]==undefined)
@@ -227,15 +229,15 @@ async function warningMessage(exixtingUser,exixtingIssue){
    const removeExistingUser = data.filter(function(checkUser){
     return checkUser.user_id !== exixtingUser.user_id;
     })
-    if(parseInt(exixtingIssue.spentTime)==0)
+    if(parseInt(exixtingIssue.spentTime)==0)//if issue not yet charged
     {
       exixtingIssue['warningMessage']="Issue is not yet Charged";
     }
 
-    else if(!(parseInt(exixtingIssue.perOfTaskCompleted)==100))
+    else if(!(parseInt(exixtingIssue.perOfTaskCompleted)==100))//if issue not completed
     {
       let array=exixtingIssue.endDate.split("/");
-      if(new Date(Date.UTC(array[2],array[1]-1,array[0])).getTime()<Date.now())
+      if(new Date(Date.UTC(array[2],array[1]-1,array[0])).getTime()<Date.now())//crossed the deadline
       {
         exixtingIssue['warningMessage']="Deadline has Crossed";
       }
@@ -243,7 +245,7 @@ async function warningMessage(exixtingUser,exixtingIssue){
         exixtingIssue['warningMessage']="";
       }
     }
-    else{
+    else{//issue is completed
       exixtingIssue['warningMessage']="Issue is Completed";
     }
     removeExistingUser.push(exixtingUser);
