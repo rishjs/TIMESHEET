@@ -17,14 +17,14 @@ const createIssue=async(req,res)=>{
       const {issue_name,startDate,endDate,totalHours}=req.body;
         //Check issue_name is empty or invalid
         if(!issue_name || typeof issue_name=="number"){
-          response(res,"Issue_name is empty or invalid",400);
+          return response(res,"Issue_name is empty or invalid",400);
         }
         //check endDate is empty
         if(!endDate){
-           let EndDate=moment().format("DD/MM/YYYY");
+           let EndDate=moment().format("DD/MM/YYYY");//current date
            if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid()))
            {
-            response(res,"Invalid date or time",400);
+            return response(res,"Invalid date or time",400);
            }
             //create issue object
             obj=createObj(issue_name,startDate,EndDate,totalHours);
@@ -33,7 +33,7 @@ const createIssue=async(req,res)=>{
           //date or time format validation
           if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(endDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid()))
           {
-            response(res,"Invalid date or time",400);
+            return response(res,"Invalid date or time",400);
           }
            //create issue object
            obj=createObj(issue_name,startDate,endDate,totalHours);
@@ -52,7 +52,7 @@ const createIssue=async(req,res)=>{
                   );
                   if(exixtingIssue)//check issue exist or not
                   {
-                     response(res,"Issue Already added",400);
+                     return response(res,"Issue Already added",400);
                   }
                   else{//if issue not exist add 
                     //remove existing user
@@ -73,7 +73,7 @@ const createIssue=async(req,res)=>{
           }
          data.push(issue);//adding the created object into existig array of objects
          await fs.promises.writeFile('./json/issueJson.json', JSON.stringify(data, null, 2))//writing into file
-         response(res,"Issue is charged",200,issue);
+         response(res,"Issue created",200,issue);
         }
     }catch(error){
     console.log(error)
@@ -89,7 +89,7 @@ return obj={//creating issue object for particular user
     startDate:startDate,
     endDate:endDate,
     totalHours:totalHours,
-    spentTime:"0"
+    spentTime:"00:00"
 }
 }
 
@@ -99,7 +99,7 @@ const chargeTime=async(req,res)=>{
     const {issue_id,todaysSpentTime,perOfTaskCompleted}=req.body;
     //check issue_id and todaysSpentTime
     if(!issue_id || !todaysSpentTime || !(moment(todaysSpentTime, 'h:mm').isValid())){
-      response(res,"Issue_id or todaysSpentTime is empty or invalid",400);
+      return response(res,"Issue_id or todaysSpentTime is empty or invalid",400);
       }
     //Existing User Check
     const exixtingUser= data.find(
@@ -120,15 +120,25 @@ const chargeTime=async(req,res)=>{
                 const removeExistingUser = data.filter(function(checkUser){
                 return checkUser.user_id !== exixtingUser.user_id;
                 })
-                exixtingIssue['spentTime']=parseInt(todaysSpentTime)+parseInt(exixtingIssue.spentTime);//add spentTime
-                exixtingIssue['perOfTaskCompleted']=perOfTaskCompleted;//add
-                removeExistingUser.push(exixtingUser);//adding the user without token field
+                let splitTime= (exixtingIssue.spentTime).split(":");//split spentTime into hour and minutes
+                let splitTime1=todaysSpentTime.split(":");// todaySpentTime into hour and minutes
+                let timeToSeconds =  (splitTime[0]) * 60 * 60 + (splitTime[1]) * 60 ;//convert into seconds
+                let timeToSeconds1 =  (splitTime1[0]) * 60 * 60 + (splitTime1[1]) * 60 ;
+                let seconds=timeToSeconds+timeToSeconds1;//add seconds
+                var hoursLeft = Math.floor( seconds / 3600 );//convert into time
+                var min = Math.floor(( seconds - hoursLeft * 3600 ) / 60 );
+                let time1=hoursLeft+":"+min;
+                exixtingIssue['spentTime']=time1;
+                exixtingIssue['perOfTaskCompleted']=perOfTaskCompleted;
+                removeExistingUser.push(exixtingUser);
                 await fs.promises.writeFile('./json/issueJson.json', JSON.stringify(removeExistingUser, null, 2));
                 if(parseInt(exixtingIssue.spentTime)>8)
                 {
-                  response(res,"Total Time has crossed 8 hours",200);
+                  warningMessage(exixtingUser,exixtingIssue);
+                  response(res,"Spent Time has crossed 8 hours",200);
                 }
                 else{
+                  warningMessage(exixtingUser,exixtingIssue);
                   response(res,"Issue is charged",200,exixtingIssue);
                 }
           }
@@ -151,7 +161,7 @@ const viewIssues=async(req,res)=>{
   try{
     const {pageNo,issue_id}=req.body;
     if(pageNo && isNaN(pageNo)){
-      response(res,"pageNo field invalid",400);
+      return response(res,"pageNo field invalid",400);
     }
     const exixtingUser= data.find(
       (data) => {
@@ -219,13 +229,24 @@ async function warningMessage(exixtingUser,exixtingIssue){
     })
     if(parseInt(exixtingIssue.spentTime)==0)
     {
-      exixtingIssue['warningMessage']="Issue is not yet Charged";//add
+      exixtingIssue['warningMessage']="Issue is not yet Charged";
     }
-    else if(parseInt(exixtingIssue.perOfTaskCompleted)!=100 && (exixtingIssue.endDate<moment().format("DD/MM/YYYY")))
+
+    else if(!(parseInt(exixtingIssue.perOfTaskCompleted)==100))
     {
-      exixtingIssue['warningMessage']="Deadline has Crossed";//add
+      let array=exixtingIssue.endDate.split("/");
+      if(new Date(Date.UTC(array[2],array[1]-1,array[0])).getTime()<Date.now())
+      {
+        exixtingIssue['warningMessage']="Deadline has Crossed";
+      }
+      else{
+        exixtingIssue['warningMessage']="";
+      }
     }
-    removeExistingUser.push(exixtingUser);//adding the user without token field
+    else{
+      exixtingIssue['warningMessage']="Issue is Completed";
+    }
+    removeExistingUser.push(exixtingUser);
     await fs.promises.writeFile('./json/issueJson.json', JSON.stringify(removeExistingUser, null, 2));
 }
 

@@ -1,39 +1,17 @@
 [
   {
-    "user_id": "68d67874-9a11-4034-a56b-ec025d86a7a9",
+    "user_id": "3b5d321a-ba10-4c15-a939-6cc053e3bee7",
     "user_name": "deepak",
     "email_id": "deepak@gmail.com",
-    "otp": "668696",
-    "expireIn": 1678771569953,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDY3ODc0LTlhMTEtNDAzNC1hNTZiLWVjMDI1ZDg2YTdhOSIsImlhdCI6MTY3ODc3MTMwMn0.7hdDUfdL4ljY7AnLEQCzNkCR98Imr70fiU8j9rgc9jo"
+    "otp": "470567",
+    "expireIn": 1679311555844,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiNWQzMjFhLWJhMTAtNGMxNS1hOTM5LTZjYzA1M2UzYmVlNyIsImlhdCI6MTY3OTMxMTI3M30.zXdReVyQyTF6jb5ZkvRa5zhUzUyGKssvt5vLQt-lLOE"
   },
   {
-    "user_id": "d49fb42e-b149-468b-a80e-42c18c676d90",
-    "user_name": "suma",
-    "email_id": "suma@gmail.com"
-  },
-  {
-    "user_id": "0240f4d4-8a5e-439f-be4e-3c5e4dd0f6bc",
-    "user_name": "hina",
-    "email_id": "hina@gmail.com",
-    "otp": "334171",
-    "expireIn": 1678789550039,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyNDBmNGQ0LThhNWUtNDM5Zi1iZTRlLTNjNWU0ZGQwZjZiYyIsImlhdCI6MTY3ODc4OTI3NH0.3wq0O6USymEXHjJEZtYUrvmW74ADtUx1F93ejiv4NVw"
-  },
-  {
-    "user_id": "c5dfc54a-119f-4b23-9139-e07bb086b6dc",
-    "user_name": "Tina",
-    "email_id": "tina@gmail.com",
-    "otp": "355865",
-    "expireIn": 1678789790574,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM1ZGZjNTRhLTExOWYtNGIyMy05MTM5LWUwN2JiMDg2YjZkYyIsImlhdCI6MTY3ODc4OTU0Mn0.DJoIqFuN56iMfgJzosAQwmvI1Zgdoha0ok3_mchsZVI"
-  },
-  {
-    "user_id": "c2fba83a-03f1-4367-8f84-63f750147dc6",
-    "user_name": "shanta",
-    "email_id": "shanta@gmail.com",
-    "otp": "585730",
-    "expireIn": 1678795619344,
-    "tokec5dfc54an": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyZmJhODNhLTAzZjEtNDM2Ny04Zjg0LTYzZjc1MDE0N2RjNiIsImlhdCI6MTY3ODc5NTM0Nn0.QuICyMtFct5KZKq5EGdBDOFP9VN0QKE7AiPEcvsCDwI"
+    "user_id": "ff52ee18-0d61-405d-af25-8657f09b8295",
+    "user_name": "bharathi",
+    "email_id": "bharathi@gmail.com",
+    "otp": "832004",
+    "expireIn": 1679312824329
   }
 ]

@@ -1,262 +1,48 @@
 [
   {
-    "user_id": "19b1cb10-c2ca-4e14-9f8b-94030e1f76cd",
+    "user_id": "3b5d321a-ba10-4c15-a939-6cc053e3bee7",
     "issues": [
       {
-        "issue_id": "73d87bc6-ec56-433f-ab3d-ec45712f4f8f",
-        "issue_name": "day3",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
-      },
-      {
-        "issue_id": "5a83ed27-6329-4bca-a748-9493e6539d8d",
-        "issue_name": "day2",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
-      },
-      {
-        "issue_id": "14306962-02d9-47c6-ac4c-7e3d7c8ab944",
+        "issue_id": "c2a65a83-d70d-4a64-949c-c7fed7e2e356",
         "issue_name": "day1",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
-      },
-      {
-        "issue_id": "728a9efc-9154-4a21-bfe2-4f61db8c9f5e",
-        "issue_name": "day5",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
+        "startDate": "19/08/2002",
+        "endDate": "21/09/2025",
+        "totalHours": "7:00",
+        "spentTime": "00:00"
       }
     ]
   },
   {
-    "user_id": "be1c46ea-82ab-4a38-a94b-8bf5d13093b3",
+    "user_id": "ff52ee18-0d61-405d-af25-8657f09b8295",
     "issues": [
       {
-        "issue_id": "7da95571-602e-49cf-b8a8-59a336107b20",
+        "issue_id": "e83f57bb-aab4-4a9f-b310-9a92972afc6a",
         "issue_name": "day1",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
+        "startDate": "19/08/2002",
+        "endDate": "21/09/2022",
+        "totalHours": "7:00",
+        "spentTime": "2:0",
+        "warningMessage": "Deadline has Crossed",
+        "perOfTaskCompleted": "30"
       },
       {
-        "issue_id": "a7098d8e-d1f4-4f6d-9e64-588d7c9b59bc",
+        "issue_id": "a6237bdf-3bc1-48fa-8469-8ce79bd2cfe6",
         "issue_name": "day2",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
-      },
-      {
-        "issue_id": "8ae3b344-7b77-4ddc-a5fe-de72d84b741a",
-        "issue_name": "day3",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "3:33"
-      },
-      {
-        "issue_id": "ac983202-d428-493e-9c37-542696ca7a45",
-        "issue_name": "day4",
-        "startDate": "20-10-2001",
-        "endDate": "7-8-3002",
-        "totalHours": "1/11"
-      },
-      {
-        "issue_id": "16b2cc43-1d32-449a-8979-336770b4eb36",
-        "issue_name": "day5",
-        "startDate": "20/10/2001",
-        "endDate": "7/8/3002",
-        "totalHours": "4/11"
-      }
-    ]
-  },
-  {
-    "user_id": "0e3ffe93-fb0d-45c4-85e5-a75e79f0c999",
-    "issues": [
-      {
-        "issue_id": "fdbcfb61-8ca0-46cf-b97f-49496ec7d8ea",
-        "issue_name": "DAY1",
-        "startDate": "2001-10-10",
-        "endDate": "20-09-2005",
-        "totalHours": "4:00"
-      }
-    ]
-  },
-  {
-    "user_id": "68d67874-9a11-4034-a56b-ec025d86a7a9",
-    "issues": [
-      {
-        "issue_id": "8e7667e9-a5f5-446c-9c3b-360ee8d287f5",
-        "issue_name": "day1",
-        "startDate": "19/9/1994",
-        "endDate": "20/11/2000",
-        "totalHours": "1:11",
-        "spentTime": null,
-        "perOfTaskCompleted": 90
-      },
-      {
-        "issue_id": "e42977f9-eb15-40dc-95cd-2d4386267c57",
-        "issue_name": "day2",
-        "startDate": "12/08/2001",
-        "endDate": "04/11/2005",
-        "totalHours": "1:00",
-        "spentTime": 6,
-        "perOfTaskCompleted": "10",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "29c269b5-b3dc-43c1-8cff-a3c96adc33d1",
-        "issue_name": "day3",
-        "startDate": "12/06/2013",
-        "endDate": "10/06/2004",
-        "totalHours": "8:00",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "449f616f-863b-4ede-95ac-148e04bf80e8",
-        "issue_name": "day4",
-        "startDate": "12/06/2013",
-        "endDate": "14/03/2023",
-        "totalHours": "8:00",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "4c14c249-ab05-4b15-b704-5deae86e8514",
-        "issue_name": "day5",
-        "startDate": "12/06/2013",
-        "endDate": "14/03/2023",
-        "totalHours": "8:00",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "9f3ed1ad-835d-40fc-98fe-3f4d216d801e",
-        "issue_name": "day6",
-        "startDate": "12/06/2013",
-        "endDate": "14/03/2023",
-        "totalHours": "8:00",
-        "spentTime": null,
-        "perOfTaskCompleted": "50",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "dab50609-0361-4e6d-849d-a8a0d2fb7755",
-        "issue_name": "day7",
-        "startDate": "12/06/2013",
-        "endDate": "10/05/2001",
-        "totalHours": "8:00",
-        "spentTime": 13,
-        "perOfTaskCompleted": "20",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "07624e3d-a712-4714-895e-a2f97d893b89",
-        "issue_name": "day8",
-        "startDate": "12/07/2013",
-        "endDate": "14/03/2023",
-        "totalHours": "8:00",
-        "spentTime": null,
-        "perOfTaskCompleted": "50",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "312a46e2-d4bd-4bf4-809c-91b7e079e6d1",
-        "issue_name": "day9",
-        "startDate": "12/07/2013",
-        "endDate": "07/06/2004",
-        "totalHours": "8:00",
-        "spentTime": null,
-        "perOfTaskCompleted": "50",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "400513fa-6ef1-4916-99c4-7c71d159d2c5",
-        "issue_name": "day11",
-        "startDate": "12/09/3001",
-        "endDate": "13/10/2002",
-        "totalHours": "4:45",
-        "spentTime": 14,
-        "perOfTaskCompleted": "50",
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "80070676-c95b-4159-b4ec-6452643c132e",
-        "issue_name": "day12",
-        "startDate": "12/09/3001",
-        "endDate": "13/10/2002",
-        "totalHours": "4:45",
-        "spentTime": "0",
+        "startDate": "19/08/2002",
+        "endDate": "15/03/2023",
+        "totalHours": "7:00",
+        "spentTime": "00:00",
         "warningMessage": "Issue is not yet Charged"
       },
       {
-        "issue_id": "e9931c94-ce69-42f8-906c-d8c9f4a35279",
-        "issue_name": "day13",
-        "startDate": "12/09/3001",
-        "endDate": "13/10/2002",
-        "totalHours": "4:45",
-        "spentTime": "0",
-        "warningMessage": "Issue is not yet Charged"
-      },
-      {
-        "issue_id": "10e141a5-216b-4cdc-9612-981b62d254f6",
-        "issue_name": "day14",
-        "startDate": "12/09/3001",
-        "endDate": "13/10/2002",
-        "totalHours": "4:45",
-        "spentTime": 15,
-        "perOfTaskCompleted": "50",
-        "warningMessage": "Deadline has Crossed"
-      }
-    ]
-  },
-  {
-    "user_id": "c5dfc54a-119f-4b23-9139-e07bb086b6dc",
-    "issues": [
-      {
-        "issue_id": "19fb7e87-5921-4f23-90fc-7391d1dda153",
-        "issue_name": "day1",
-        "startDate": "12/09/3001",
-        "endDate": "13/10/2002",
-        "totalHours": "4:45",
-        "spentTime": 27,
-        "perOfTaskCompleted": 99,
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "b778ea1b-e841-4404-a10f-733a8877a9df",
-        "issue_name": "day2",
-        "startDate": "05/07/2003",
-        "endDate": "04/01/2004",
-        "totalHours": "3:00",
-        "spentTime": 6,
-        "perOfTaskCompleted": 90,
-        "warningMessage": "Deadline has Crossed"
-      }
-    ]
-  },
-  {
-    "user_id": "c2fba83a-03f1-4367-8f84-63f750147dc6",
-    "issues": [
-      {
-        "issue_id": "e2f2ae9f-ddd2-4744-ae5c-fd6a4ed085b2",
-        "issue_name": "day14",
-        "startDate": "12/09/3001",
-        "endDate": "13/10/2002",
-        "totalHours": "4:45",
-        "spentTime": 22,
-        "perOfTaskCompleted": 90,
-        "warningMessage": "Deadline has Crossed"
-      },
-      {
-        "issue_id": "1959d08b-a243-4de5-bcf8-88364dfd3b8b",
-        "issue_name": "day1",
-        "startDate": "07/07/2007",
-        "endDate": "08/04/2024",
-        "totalHours": "2:00",
-        "spentTime": 2,
-        "perOfTaskCompleted": 90,
-        "warningMessage": "Deadline has Crossed"
+        "issue_id": "f6493e1c-86e0-4036-8514-c72f6d93c09a",
+        "issue_name": "day3",
+        "startDate": "19/08/2002",
+        "endDate": "15/03/2025",
+        "totalHours": "7:00",
+        "spentTime": "9:0",
+        "warningMessage": "",
+        "perOfTaskCompleted": "30"
       }
     ]
   }
