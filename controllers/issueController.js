@@ -116,8 +116,8 @@ const chargeTime=async(req,res)=>{
                 let timeToSeconds =  (splitTime[0]) * 60 * 60 + (splitTime[1]) * 60 ;//convert into seconds
                 let timeToSeconds1 =  (splitTime1[0]) * 60 * 60 + (splitTime1[1]) * 60 ;
                 let seconds=timeToSeconds+timeToSeconds1;//add seconds
-                var hoursLeft = Math.floor( seconds / 3600 );//convert into time
-                var min = Math.floor(( seconds - hoursLeft * 3600 ) / 60 );
+                let hoursLeft = Math.floor( seconds / 3600 );//convert into time
+                let min = Math.floor(( seconds - hoursLeft * 3600 ) / 60 );
                 let time1=hoursLeft+":"+min;
                 exixtingIssue['spentTime']=time1;
                 exixtingIssue['perOfTaskCompleted']=(perOfTaskCompleted)?perOfTaskCompleted:exixtingIssue.perOfTaskCompleted;
