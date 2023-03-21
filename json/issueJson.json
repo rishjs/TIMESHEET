@@ -1,18 +1,5 @@
 [
   {
-    "user_id": "3b5d321a-ba10-4c15-a939-6cc053e3bee7",
-    "issues": [
-      {
-        "issue_id": "c2a65a83-d70d-4a64-949c-c7fed7e2e356",
-        "issue_name": "day1",
-        "startDate": "19/08/2002",
-        "endDate": "21/09/2025",
-        "totalHours": "7:00",
-        "spentTime": "00:00"
-      }
-    ]
-  },
-  {
     "user_id": "ff52ee18-0d61-405d-af25-8657f09b8295",
     "issues": [
       {
@@ -47,6 +34,21 @@
     ]
   },
   {
+    "user_id": "3b5d321a-ba10-4c15-a939-6cc053e3bee7",
+    "issues": [
+      {
+        "issue_id": "c2a65a83-d70d-4a64-949c-c7fed7e2e356",
+        "issue_name": "day1",
+        "startDate": "19/08/2002",
+        "endDate": "21/09/2025",
+        "totalHours": "7:00",
+        "spentTime": "2:30",
+        "warningMessage": "Issue is Completed",
+        "perOfTaskCompleted": "100"
+      }
+    ]
+  },
+  {
     "user_id": "490af2cb-d058-4d84-ba1e-19898fa52fb4",
     "issues": [
       {
@@ -64,7 +66,7 @@
         "startDate": "10/01/2002",
         "endDate": "12/07/2022",
         "totalHours": "14:00",
-        "spentTime": "9:0",
+        "spentTime": "14:0",
         "perOfTaskCompleted": "100",
         "warningMessage": "Issue is Completed"
       },
@@ -103,6 +105,34 @@
         "totalHours": "7:00",
         "spentTime": "00:00",
         "perOfTaskCompleted": "0"
+      },
+      {
+        "issue_id": "e09a3fd4-40ab-4e55-95bc-8b00a1153907",
+        "issue_name": "day7",
+        "startDate": "09/07/2001",
+        "endDate": "21/03/2023",
+        "totalHours": "7:00",
+        "spentTime": "00:00",
+        "perOfTaskCompleted": "0"
+      },
+      {
+        "issue_id": "0944c81d-97a3-4d11-a0d3-afb5c63e1195",
+        "issue_name": "day8",
+        "startDate": "09/07/2001",
+        "endDate": "08/03/1999",
+        "totalHours": "7:00",
+        "spentTime": "5:0",
+        "perOfTaskCompleted": "50",
+        "warningMessage": "Deadline has Crossed"
+      },
+      {
+        "issue_id": "8dc22751-58ee-4381-80ae-0bdd9f960cf6",
+        "issue_name": "day9",
+        "startDate": "09/07/2024",
+        "endDate": "09/08/2024",
+        "totalHours": "7:00",
+        "spentTime": "5:45",
+        "perOfTaskCompleted": "50"
       }
     ]
   }

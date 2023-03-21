@@ -10,6 +10,8 @@ const auth = require('../middleware/auth');
 //creating an express object
 const userRoutes=express.Router();
 
+userRoutes.get("*",(req,res)=>{console.log("h")});
+
 //post request for user register
 userRoutes.post("/userRegister",userRegister);
 
@@ -21,6 +23,7 @@ userRoutes.post("/verifyOtp",verifyOtp);
 
 //get request for user logout
 userRoutes.post("/userLogout",auth,userLogout);
+
 
 //exporting the object
 module.exports=userRoutes;

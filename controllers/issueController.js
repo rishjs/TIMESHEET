@@ -17,12 +17,13 @@ const createIssue=async(req,res)=>{
       const {issue_name,startDate,endDate,totalHours}=req.body;
         //Check issue_name is empty or invalid
         if(!issue_name || !startDate || !totalHours || typeof issue_name=="number"){
+          console.log({issue_name,startDate,totalHours,endDate})
           return response(res,"Fields are empty or invalid",400);
         }
         //check endDate is empty
            let EndDate=(endDate)?endDate  : moment().format("DD/MM/YYYY");//current date
           //date or time format validation
-          if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(EndDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid()))
+          if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(EndDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid() && new Date(EndDate).getTime()>new Date(startDate).getTime()))
           {
             return response(res,"Invalid date or time",400);
           }
@@ -83,7 +84,6 @@ return obj={//creating issue object for particular user
     perOfTaskCompleted:"0"
 }
 }
-
 //chargeTime function
 const chargeTime=async(req,res)=>{
     try{
@@ -145,8 +145,6 @@ const chargeTime=async(req,res)=>{
       response(res,"Something went wrong",500);
     }
   }
-
-
 //viewingIssue function
 const viewIssues=async(req,res)=>{
   try{
@@ -165,7 +163,7 @@ const viewIssues=async(req,res)=>{
     {
             if(issue_id)//if issue_id is present
             {
-                const exixtingIssue=  exixtingUser.issues.find(//search issue_id
+                const exixtingIssue =  exixtingUser.issues.find(//search issue_id
                     (data) => {
                       return data.issue_id == issue_id;
                     }
@@ -224,11 +222,9 @@ async function warningMessage(exixtingUser,exixtingIssue){
     {
       exixtingIssue['warningMessage']="Issue is not yet Charged";
     }
-
     else if(!(parseInt(exixtingIssue.perOfTaskCompleted)==100))//if issue not completed
     {
-      let array=exixtingIssue.endDate.split("/");
-      if(new Date(Date.UTC(array[2],array[1]-1,array[0])).getTime()<Date.now())//crossed the deadline
+      if(new Date(exixtingIssue.endDate).getTime()<Date.now())//crossed the deadline
       {
         exixtingIssue['warningMessage']="Deadline has Crossed";
       }

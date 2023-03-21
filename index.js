@@ -9,8 +9,11 @@ const issueRoutes = require('./routes/issueRoutes');
 //creating an express object
 const app=express();
 
+
 //convert req body into json object
 app.use(express.json());
+
+app.get("*",(req,res)=>{res.json({response_message:"Invalid Route",response_status:"400"})})
 
 //routing all user request 
 app.use("/",userRoutes);
