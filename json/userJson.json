@@ -13,5 +13,13 @@
     "email_id": "bharathi@gmail.com",
     "otp": "832004",
     "expireIn": 1679312824329
+  },
+  {
+    "user_id": "490af2cb-d058-4d84-ba1e-19898fa52fb4",
+    "user_name": "shanta",
+    "email_id": "shanta@gmail.com",
+    "otp": "809210",
+    "expireIn": 1679371968411,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ5MGFmMmNiLWQwNTgtNGQ4NC1iYTFlLTE5ODk4ZmE1MmZiNCIsImlhdCI6MTY3OTM3MTY4N30.RTwVuP8aJndorconLcOFyXul3EGV5B16EzSwlEN1JDA"
   }
 ]

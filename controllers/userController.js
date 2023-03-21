@@ -150,7 +150,6 @@ const userLogout=async(req,res)=>{
        await fs.promises.writeFile('./json/userJson.json', JSON.stringify(removeExistingUser, null, 2))
        response(res,"Logged out",200);
   }
-  
   }catch(error){
     console.log(error);
     return response(res,"Something went wrong",500);

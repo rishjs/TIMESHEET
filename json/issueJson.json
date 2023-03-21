@@ -45,5 +45,37 @@
         "perOfTaskCompleted": "30"
       }
     ]
+  },
+  {
+    "user_id": "490af2cb-d058-4d84-ba1e-19898fa52fb4",
+    "issues": [
+      {
+        "issue_id": "d29499ba-5165-4aaa-abb3-14c1977ebc38",
+        "issue_name": "day1",
+        "startDate": "10/01/2002",
+        "endDate": "12/07/2023",
+        "totalHours": "7:00",
+        "spentTime": "00:00",
+        "warningMessage": "Issue is not yet Charged"
+      },
+      {
+        "issue_id": "3e43e93b-decf-445e-a918-2a1195cd21ae",
+        "issue_name": "day2",
+        "startDate": "10/01/2002",
+        "endDate": "12/07/2022",
+        "totalHours": "14:00",
+        "spentTime": "9:0",
+        "perOfTaskCompleted": "100",
+        "warningMessage": "Issue is Completed"
+      },
+      {
+        "issue_id": "64cca9ad-2769-4243-8c1c-0d8949d5b455",
+        "issue_name": "day3",
+        "startDate": "10/01/2002",
+        "endDate": "22/03/2023",
+        "totalHours": "14:00",
+        "spentTime": "2:0"
+      }
+    ]
   }
 ]

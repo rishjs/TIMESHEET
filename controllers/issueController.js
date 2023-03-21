@@ -16,8 +16,8 @@ const createIssue=async(req,res)=>{
       let obj;
       const {issue_name,startDate,endDate,totalHours}=req.body;
         //Check issue_name is empty or invalid
-        if(!issue_name || typeof issue_name=="number"){
-          return response(res,"Issue_name is empty or invalid",400);
+        if(!issue_name || !startDate || !endDate || !totalHours || typeof issue_name=="number"){
+          return response(res,"Fields are empty or invalid",400);
         }
         //check endDate is empty
         if(!endDate){
@@ -190,7 +190,7 @@ const viewIssues=async(req,res)=>{
             }
             else{//if issue_id is not given
               let array=[];
-              if(pageNo)//if pageNo is prenent
+              if(pageNo)//if pageNo is present
               {
                 for(let i=((pageNo-1)*10);i<(pageNo*10);i++)//paginate the issues
                 {
@@ -242,7 +242,7 @@ async function warningMessage(exixtingUser,exixtingIssue){
         exixtingIssue['warningMessage']="Deadline has Crossed";
       }
       else{
-        exixtingIssue['warningMessage']="";
+        delete exixtingIssue.warningMessage;
       }
     }
     else{//issue is completed
