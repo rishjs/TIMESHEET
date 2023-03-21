@@ -19,6 +19,5 @@ issueRoutes.post("/chargeTime",auth,chargeTime);
 //get request for viewIssues
 issueRoutes.get("/viewIssues",auth,viewIssues);
 
-
 //exporting the object
 module.exports=issueRoutes;
