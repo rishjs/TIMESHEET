@@ -16,28 +16,18 @@ const createIssue=async(req,res)=>{
       let obj;
       const {issue_name,startDate,endDate,totalHours}=req.body;
         //Check issue_name is empty or invalid
-        if(!issue_name || !startDate || !endDate || !totalHours || typeof issue_name=="number"){
+        if(!issue_name || !startDate || !totalHours || typeof issue_name=="number"){
           return response(res,"Fields are empty or invalid",400);
         }
         //check endDate is empty
-        if(!endDate){
-           let EndDate=moment().format("DD/MM/YYYY");//current date
-           if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid()))
-           {
-            return response(res,"Invalid date or time",400);
-           }
-            //create issue object
-            obj=createObj(issue_name,startDate,EndDate,totalHours);
-        }
-        else{
+           let EndDate=(endDate)?endDate  : moment().format("DD/MM/YYYY");//current date
           //date or time format validation
-          if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(endDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid()))
+          if(!(moment(startDate, 'DD/MM/YYYY').isValid() && moment(EndDate, 'DD/MM/YYYY').isValid() && moment(totalHours, 'h:mm').isValid()))
           {
             return response(res,"Invalid date or time",400);
           }
            //create issue object
-           obj=createObj(issue_name,startDate,endDate,totalHours);
-        }
+           obj=createObj(issue_name,startDate,EndDate,totalHours);
         //Existing User Check
         const exixtingUser=  data.find(
             (data) => {
@@ -89,7 +79,8 @@ return obj={//creating issue object for particular user
     startDate:startDate,
     endDate:endDate,
     totalHours:totalHours,
-    spentTime:"00:00"
+    spentTime:"00:00",
+    perOfTaskCompleted:"0"
 }
 }
 
@@ -129,7 +120,7 @@ const chargeTime=async(req,res)=>{
                 var min = Math.floor(( seconds - hoursLeft * 3600 ) / 60 );
                 let time1=hoursLeft+":"+min;
                 exixtingIssue['spentTime']=time1;
-                exixtingIssue['perOfTaskCompleted']=perOfTaskCompleted;
+                exixtingIssue['perOfTaskCompleted']=(perOfTaskCompleted)?perOfTaskCompleted:exixtingIssue.perOfTaskCompleted;
                 removeExistingUser.push(exixtingUser);
                 await fs.promises.writeFile('./json/issueJson.json', JSON.stringify(removeExistingUser, null, 2));
                 if(parseInt(exixtingIssue.spentTime)>8)
